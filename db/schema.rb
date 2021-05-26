@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_062058) do
+ActiveRecord::Schema.define(version: 2021_05_26_071838) do
+
+  create_table "buds", force: :cascade do |t|
+    t.integer "session_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.string "language"
