@@ -10,5 +10,10 @@
   <%= @session.project %>
 </p>
 
+<p>
+  <strong>Study Buddies:</strong>
+  <%= @session.buds %>
+</p>
+
 <%= link_to 'Edit', edit_session_path(@session) %> |
 <%= link_to 'Back', sessions_path %>
