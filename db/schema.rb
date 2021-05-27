@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 2021_05_27_043744) do
   create_table "sessions", force: :cascade do |t|
     t.string "language"
     t.string "project"
+    t.string "buds"
+    t.integer "minutes"
+    # t.datetime "start_time", precision: 6, null: False
+    # t.datetime "end_time", precision: 6, null: False
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

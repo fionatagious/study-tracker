@@ -1,6 +1,14 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: %i[ show edit update destroy ]
 
+  def set_session_start
+    Time.now
+  end
+
+  def set_session_end
+    Time.now
+  end
+
   # GET /sessions or /sessions.json
   def index
     @sessions = Session.all

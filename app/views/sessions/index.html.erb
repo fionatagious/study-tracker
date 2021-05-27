@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Stopwatch</h1>
-  <td><%= button_to 'start' %></td>
-  <td><%= button_to 'stop' %></td>
+  <td><%= button_to 'start', :action => "set_session_start", :method => :get %></td>
+  <td><%= button_to 'stop', :action => "set_session_end", :method => :get %></td>
   
 
 <h1>Sessions</h1>
@@ -23,8 +23,8 @@
       <tr>
         <td><%= session.language %></td>
         <td><%= session.project %></td>
-        <td><%= session.project %></td>
-        <td><%= session.project %></td>
+        <td><%= session.language %></td>
+        <td><%= session.language %></td>
 
 
         <td><%= link_to 'Show', session %></td>
