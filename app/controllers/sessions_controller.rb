@@ -1,12 +1,16 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: %i[ show edit update destroy ]
 
+  # GET
   def set_session_start
-    Time.now
+    start = Time.now
+    @session = Session.create(start_time: start)
+    redirect_to(sessions_path)
   end
 
   def set_session_end
-    Time.now
+    end_time = Time.now
+    @session = Session.create(end_time: end_time)
   end
 
   # GET /sessions or /sessions.json

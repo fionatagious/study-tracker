@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Stopwatch</h1>
-  <td><%= button_to 'start', :action => "set_session_start", :method => :get %></td>
-  <td><%= button_to 'stop', :action => "set_session_end", :method => :get %></td>
+  <td><%= button_to 'start', :action => "set_session_start" %></td>
+  <td><%= button_to 'stop', :action => "set_session_end" %></td>
   
+
 
 <h1>Sessions</h1>
 
@@ -12,8 +13,7 @@
     <tr>
       <th>Language</th>
       <th>Project</th>
-      <th>Minutes</th>
-      <th>Study Buddies</th>
+      <th>Buddies</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,9 +23,6 @@
       <tr>
         <td><%= session.language %></td>
         <td><%= session.project %></td>
-        <td><%= session.language %></td>
-        <td><%= session.language %></td>
-
 
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>

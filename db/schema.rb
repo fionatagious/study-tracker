@@ -10,17 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_043744) do
-
-
-  create_table "minutes", force: :cascade do |t|
-    t.integer "session_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_06_01_143503) do
 
   create_table "buds", force: :cascade do |t|
     t.integer "session_id"
+    t.string "buddies"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,12 +22,12 @@ ActiveRecord::Schema.define(version: 2021_05_27_043744) do
   create_table "sessions", force: :cascade do |t|
     t.string "language"
     t.string "project"
-    t.string "buds"
     t.integer "minutes"
-    # t.datetime "start_time", precision: 6, null: False
-    # t.datetime "end_time", precision: 6, null: False
+    t.string "buddies"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
 end
