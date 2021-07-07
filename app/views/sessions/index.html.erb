@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Stopwatch</h1>
-  <td><%= button_to 'start', :action => "set_session_start" %></td>
-  <td><%= button_to 'stop', :action => "set_session_end" %></td>
+  <td>
+    <%= button_to 'start', :action => "set_session_start" %>
+    <p class="leading-relaxed"><span>Begin time is <%= @start.to_s %></span</p>
+  </td>
+  <td>
+    <%= button_to 'stop', :action => "set_session_end" %>
+    <p class="leading-relaxed"><span>End time is <%= @end.to_s %></span</p>
+  </td>
+
   
 
 

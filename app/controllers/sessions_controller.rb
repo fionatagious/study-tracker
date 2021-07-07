@@ -1,16 +1,21 @@
 class SessionsController < ApplicationController
-  before_action :set_session, only: %i[ show edit update destroy ]
+  # before_action :set_session_start
+  # before_action :set_session_end
+
+  # only: %i[ show edit update destroy ]
 
   # GET
   def set_session_start
-    start = Time.now
-    @session = Session.create(start_time: start)
-    redirect_to(sessions_path)
+    @start = Time.now
+    # @session = Session.create(start_time: @start)
+    # @start = start
+    # redirect_to(sessions_path)
   end
 
   def set_session_end
-    end_time = Time.now
-    @session = Session.create(end_time: end_time)
+    @end = Time.now
+    # @session = Session.create(end_time: end_time)
+     #duration_min = ((end_time-start_time)/60).round(0)
   end
 
   # GET /sessions or /sessions.json
@@ -25,6 +30,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
+    redirect_to(sessions_path)
   end
 
   # GET /sessions/1/edit
