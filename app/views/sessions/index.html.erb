@@ -2,7 +2,7 @@
 
 <h1>Stopwatch</h1>
   <td>
-    <%= button_to 'start', :action => "set_session_start" %>
+    <%= button_to 'start', {action: :new}, method: :get %>
     <p class="leading-relaxed"><span>Begin time is <%= @start.to_s %></span</p>
   </td>
   <td>

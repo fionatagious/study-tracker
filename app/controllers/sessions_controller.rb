@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
-  # before_action :set_session_start
-  # before_action :set_session_end
+  before_action :set_session_start
+  before_action :set_session_end
 
   # only: %i[ show edit update destroy ]
 
   # GET
+
   def set_session_start
     @start = Time.now
     # @session = Session.create(start_time: @start)
-    # @start = start
     # redirect_to(sessions_path)
   end
 
@@ -29,8 +29,11 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    @session = Session.new
-    redirect_to(sessions_path)
+    # @session = Session.new
+    @start = Time.now.to_i
+    # Session.new(params[:start])
+    puts "hello asheesh!"
+    redirect_to action: "index", params:{start:@start}
   end
 
   # GET /sessions/1/edit
