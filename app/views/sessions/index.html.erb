@@ -2,16 +2,14 @@
 
 <h1>Stopwatch</h1>
   <td>
+    <%= button_to 'start', {action: :new}, method: :get %>
+    <%= button_to 'stop', {action: :new}, method: :get %>
     <% if params.key?(:start) %>
       <p class="leading-relaxed"><span>Begin time is <%= Time.at(params[:start].to_i).to_s %></span></p>
     <% else %>
-      <%= button_to 'start', {action: :new}, method: :get %>
+      <p class="leading-relaxed"><span>Stop time is <%= Time.at(params[:stop].to_i).to_s %></span></p>
     <% end %>
   </td>
-  <td>
-    <%= button_to 'stop', :action => "set_session_end" %>
-  </td>
-
   
 
 

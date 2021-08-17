@@ -36,6 +36,12 @@ class SessionsController < ApplicationController
     redirect_to action: "index", params:{start:@start}
   end
 
+  def stop
+    @stop = Time.now.to_i
+    puts "hello fiona!"
+    redirect_to action: "index", params:{stop:@stop}
+  end
+
   # GET /sessions/1/edit
   def edit
   end
@@ -70,7 +76,11 @@ class SessionsController < ApplicationController
 
   # DELETE /sessions/1 or /sessions/1.json
   def destroy
-    @session.destroy
+    # @session.destroy
+    # @stop = Time.now.to_i
+    # Session.new(params[:start])
+    # puts "hello fiona!"
+    # redirect_to action: "index", params:{start:@stop}
     respond_to do |format|
       format.html { redirect_to sessions_url, notice: "Session was successfully destroyed." }
       format.json { head :no_content }
