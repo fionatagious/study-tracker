@@ -76,11 +76,8 @@ class SessionsController < ApplicationController
 
   # DELETE /sessions/1 or /sessions/1.json
   def destroy
-    # @session.destroy
-    # @stop = Time.now.to_i
-    # Session.new(params[:start])
-    # puts "hello fiona!"
-    # redirect_to action: "index", params:{start:@stop}
+    @session = Session.find(params[:id])
+    @session.destroy
     respond_to do |format|
       format.html { redirect_to sessions_url, notice: "Session was successfully destroyed." }
       format.json { head :no_content }

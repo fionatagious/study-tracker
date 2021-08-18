@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   root to: 'sessions#index'
-  # post "set_session_start" => "sessions#set_session_start"
-  # post "set_session_end" => "sessions#set_session_end"
-
   # get "/sessions/:start" => "sessions#index", as: :start
   # get '/sessions/:stop' =>  'sessions#index', as: :stop
 

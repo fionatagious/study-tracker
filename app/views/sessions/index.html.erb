@@ -10,6 +10,11 @@
       <p class="leading-relaxed"><span>Stop time is <%= Time.at(params[:stop].to_i).to_s %></span></p>
     <% end %>
   </td>
+  <td>
+    <p><%= Time.at(params[:start].to_i).to_s %></p>
+    <p><%= Time.at(params[:stop].to_i).to_s %></p>
+  </td>
+
   
 
 
