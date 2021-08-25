@@ -29,18 +29,26 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    # @session = Session.new
-    @start = Time.now.to_i
-    # Session.new(params[:start])
-    puts "hello asheesh!"
-    redirect_to action: "index", params:{start:@start}
+    Rails.logger.info "inside sessions_controller new"
+    # @start = Time.now.to_i
+    # if (@start != nil)
+    #   @stop = Time.now.to_i
+    #
+    # if (@start = nil)
+    #
+    if @start.present?
+      @stop = Time.now.to_i
+    else
+      @start = Time.now.to_i
+    end
+    redirect_to action: "index", params: {start:@start, stop:@stop}
   end
-
-  def stop
-    @stop = Time.now.to_i
-    puts "hello fiona!"
-    redirect_to action: "index", params:{stop:@stop}
-  end
+  #
+  # def stop
+  #   @stop = Time.now.to_i
+  #   puts "hello fiona!"
+  #   redirect_to action: "index", params:{start:@start, stop:@stop}
+  # end
 
   # GET /sessions/1/edit
   def edit

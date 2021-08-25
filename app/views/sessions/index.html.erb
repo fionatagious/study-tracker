@@ -2,18 +2,20 @@
 
 <h1>Stopwatch</h1>
   <td>
-    <%= button_to 'start', {action: :new}, method: :get, disabled: (params.key?(:start)) %>
-    <%= button_to 'stop', {action: :new}, method: :get , disabled: !(params.key?(:start)) %>
+    <%= button_to 'start', {action: :new}, method: :get %>
+    <%= button_to 'stop', {action: :new}, method: :get  %>
     <% if params.key?(:start) %>
-      <p class="leading-relaxed"><span>Begin time is <%= Time.at(params[:start].to_i).to_s %></span></p>
-  <% else %>
-      <p class="leading-relaxed"><span>Stop time is <%= Time.at(params[:stop].to_i).to_s %></span></p>
-    <% end %>
+      <p class="leading-relaxed"><span>[works] Start time is <%= params[:start] %></span></p>
+    <% else %>
+      <p class="leading-relaxed"><span>Stop time is <%= params[:stop].to_i.to_s %></span></p>
+      <%#= link_to 'Create Session', new_session_path  %>
+  <% end %>
   </td>
-  <td>
-    <p><%= Time.at(params[:start].to_i).to_s %></p>
-    <p><%= Time.at(params[:stop].to_i).to_s %></p>
-  </td>
+<!--  <td>-->
+<!--    <p> Start is <%#= Time.at(params[:start].to_i).to_s %></p>-->
+<!--    <p> Stop is <%#= Time.at(params[:stop].to_i).to_s %></p>-->
+<!--  </td>-->
+
 
   
 
