@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'sessions#index'
   # get "/sessions/:start" => "sessions#index", as: :start
-  # get '/sessions/:stop' =>  'sessions#index', as: :stop
+  get '/sessions/stop' =>  'sessions#stop', as: :stop
 
   resources :sessions do
   end

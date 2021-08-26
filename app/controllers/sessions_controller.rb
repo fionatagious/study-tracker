@@ -1,22 +1,22 @@
 class SessionsController < ApplicationController
-  before_action :set_session_start
-  before_action :set_session_end
+  # before_action :set_session_start
+  # before_action :set_session_end
 
   # only: %i[ show edit update destroy ]
 
   # GET
 
-  def set_session_start
-    @start = Time.now
-    # @session = Session.create(start_time: @start)
-    # redirect_to(sessions_path)
-  end
-
-  def set_session_end
-    @end = Time.now
-    # @session = Session.create(end_time: end_time)
-     #duration_min = ((end_time-start_time)/60).round(0)
-  end
+  # def set_session_start
+  #   @start = Time.now
+  #   # @session = Session.create(start_time: @start)
+  #   # redirect_to(sessions_path)
+  # end
+  #
+  # def set_session_end
+  #   @end = Time.now
+  #   # @session = Session.create(end_time: end_time)
+  #    #duration_min = ((end_time-start_time)/60).round(0)
+  # end
 
   # GET /sessions or /sessions.json
   def index
@@ -30,25 +30,15 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     Rails.logger.info "inside sessions_controller new"
-    # @start = Time.now.to_i
-    # if (@start != nil)
-    #   @stop = Time.now.to_i
-    #
-    # if (@start = nil)
-    #
-    if @start.present?
-      @stop = Time.now.to_i
-    else
-      @start = Time.now.to_i
-    end
-    redirect_to action: "index", params: {start:@start, stop:@stop}
+    @start = Time.now.to_i
+    redirect_to action: "index", params: { start: @start }
   end
-  #
-  # def stop
-  #   @stop = Time.now.to_i
-  #   puts "hello fiona!"
-  #   redirect_to action: "index", params:{start:@start, stop:@stop}
-  # end
+
+  def stop
+    @stop = Time.now.to_i
+    # Inside a controller action, Rails can access url data through params, e.g. params[:start]
+    redirect_to action: "index", params: { start: params[:start], stop: @stop }
+  end
 
   # GET /sessions/1/edit
   def edit
