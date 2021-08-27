@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/sessions/start' =>  'sessions#start', as: :start
   get '/sessions/stop' =>  'sessions#stop', as: :stop
 
+  post '/sessions/new' => 'sessions#new', as: :new
+
   resources :sessions do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
