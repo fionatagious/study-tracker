@@ -1,23 +1,5 @@
 class SessionsController < ApplicationController
-  # before_action :set_session_start
-  # before_action :set_session_end
-
-  # only: %i[ show edit update destroy ]
-
   # GET
-
-  # def set_session_start
-  #   @start = Time.now
-  #   # @session = Session.create(start_time: @start)
-  #   # redirect_to(sessions_path)
-  # end
-  #
-  # def set_session_end
-  #   @end = Time.now
-  #   # @session = Session.create(end_time: end_time)
-  #    #duration_min = ((end_time-start_time)/60).round(0)
-  # end
-
   # GET /sessions or /sessions.json
   def index
     @sessions = Session.all
@@ -30,12 +12,12 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     Rails.logger.info "inside sessions_controller new"
-    @start = Time.now.to_i
+    @start = Time.now
     redirect_to action: "index", params: { start: @start }
   end
 
   def stop
-    @stop = Time.now.to_i
+    @stop = Time.now
     # Inside a controller action, Rails can access url data through params, e.g. params[:start]
     redirect_to action: "index", params: { start: params[:start], stop: @stop }
   end
