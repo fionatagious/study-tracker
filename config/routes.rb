@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'sessions#index'
+  get '/sessions/start' =>  'sessions#start', as: :start
   get '/sessions/stop' =>  'sessions#stop', as: :stop
 
   resources :sessions do

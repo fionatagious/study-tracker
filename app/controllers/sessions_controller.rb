@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   # GET /sessions/new
-  def new
+  def start
     Rails.logger.info "inside sessions_controller new"
     @start = Time.now
     redirect_to action: "index", params: { start: @start }
