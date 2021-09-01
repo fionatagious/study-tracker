@@ -1,15 +1,15 @@
 <%= form_with(model: session, local: true) do |form| %>
-  <%# if session.errors.any? %>
-<!--    <div id="error_explanation">-->
-<!--      <h2><%#= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>-->
+  <% if session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
 
-<!--      <ul>-->
-        <%# session.errors.full_messages.each do |message| %>
-<!--          <li><%#= message %></li>-->
-        <%# end %>
-<!--      </ul>-->
-<!--    </div>-->
-  <%# end %>
+      <ul>
+        <% session.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :language %>
@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :buddies %>
-    <%= form.text_field :bud %>
+    <%= form.label :minutes %>
+    <%= form.text_field :minutes %>
   </div>
 
   <div class="field">
-    <%= form.label :minutes %>
-    <%= form.text_field :minutes %>
+    <%= form.label :buddies %>
+    <%= form.text_field :buddies %>
   </div>
 
   <div class="actions">

@@ -11,8 +11,13 @@
 </p>
 
 <p>
+  <strong>Minutes:</strong>
+  <%= @session.minutes %>
+</p>
+
+<p>
   <strong>Study Buddies:</strong>
-  <%= @session.buds %>
+  <%= @session.buddies %>
 </p>
 
 <%= link_to 'Edit', edit_session_path(@session) %> |

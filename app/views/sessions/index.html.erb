@@ -21,8 +21,9 @@
     <tr>
       <th>Language</th>
       <th>Project</th>
+      <th>Minutes</th>
       <th>Buddies</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -31,6 +32,9 @@
       <tr>
         <td><%= session.language %></td>
         <td><%= session.project %></td>
+        <td><%= session.minutes %></td>
+        <td><%= session.buddies %></td>
+
 
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>

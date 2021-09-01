@@ -2,14 +2,23 @@ class SessionsController < ApplicationController
   # GET
   # GET /sessions or /sessions.json
   def index
+    # index.html.erb
     @sessions = Session.all
   end
 
   # GET /sessions/1 or /sessions/1.json
   def show
+    # show.html.erb
+    @session = Session.find(params[:id])
   end
 
   # GET /sessions/new
+  def new
+    # solved error : param is missing or the value is empty: session
+    # new.html.erb
+    @session = Session.new
+  end
+
   def start
     Rails.logger.info "inside sessions_controller new"
     @start = Time.now
@@ -33,10 +42,10 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.save
         format.html { redirect_to @session, notice: "Session was successfully created." }
-        format.json { render :show, status: :created, location: @session }
+        # format.json { render :show, status: :created, location: @session }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
+        # format.json { render json: @session.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,13 +74,14 @@ class SessionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_session
-      @session = Session.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_session
+    @session = Session.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def session_params
-      params.require(:session).permit(:language, :project)
-    end
+  # Only allow a list of trusted parameters through.
+  def session_params
+    params.require(:session).permit(:language, :project, :minutes, :buddies)
+  end
+
 end
