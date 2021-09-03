@@ -15,20 +15,22 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     # solved error : param is missing or the value is empty: session
-    # new.html.erb
-    @session = Session.new
+    @session = Session.new(minutes: params[:duration])
+    # (session_params)
+    # @session.duration = 10
   end
 
   def start
-    Rails.logger.info "inside sessions_controller new"
     @start = Time.now
     redirect_to action: "index", params: { start: @start }
   end
 
   def stop
     @stop = Time.now
+    @duration = (@stop.to_time.to_i - params[:start].to_time.to_i)/60
     # Inside a controller action, Rails can access url data through params, e.g. params[:start]
-    redirect_to action: "index", params: { start: params[:start], stop: @stop }
+    redirect_to action: "index", params: { start: @start, stop: @stop, minutes: @duration }
+    # redirect_to action: "new", params: { session: { minutes: @duration } }
   end
 
   # GET /sessions/1/edit
@@ -81,6 +83,10 @@ class SessionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def session_params
+    params.require(:session).permit(:language, :project, :minutes, :buddies)
+  end
+
+  def duration
     params.require(:session).permit(:language, :project, :minutes, :buddies)
   end
 

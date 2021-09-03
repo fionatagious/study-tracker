@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: 'sessions#index'
 
   # http verb 'path' => controller#action
-  get '/sessions/start' =>  'sessions#start', as: :start
-  get '/sessions/stop' =>  'sessions#stop', as: :stop
+  get '/sessions/start' => 'sessions#start', as: :start
+  get '/sessions/stop' => 'sessions#stop', as: :stop
 
   # new session form on 'new session' page
   get '/sessions/new' => 'sessions#new', as: :new

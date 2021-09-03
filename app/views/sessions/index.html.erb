@@ -6,11 +6,12 @@
     <%= button_to 'stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
     <% if params.key?(:start) %>
       <p class="leading-relaxed"><span>Start time is <%= params[:start].to_time.to_formatted_s(:time) %></span></p>
-      <% if params.key?(:stop) %>
-        <p class="leading-relaxed"><span>Stop time is <%= params[:stop].to_time.to_formatted_s(:time)  %></span></p>
-        <p class="leading-relaxed"><span>Session duration: <%= ((params[:stop].to_time.to_i - params[:start].to_time.to_i)/60).to_s %></span> minutes </p>
-        <%= link_to 'Create New Session', new_session_path %>
-      <% end %>
+    <% end %>
+
+    <% if params.key?(:stop) %>
+      <p class="leading-relaxed"><span>Stop time is <%= params[:stop].to_time.to_formatted_s(:time)  %></span></p>
+      <p class="leading-relaxed"><span>Session duration: <%= params[:minutes].to_s %></span> minutes </p>
+      <%= link_to 'Create a session with this duration', { action: "new" }, params: params[:minutes].to_s %>
     <% end %>
   </td>
 
@@ -44,6 +45,6 @@
   </tbody>
 </table>
 
-<%= link_to 'Create New Session', new_session_path %>
+<%= link_to 'Create a Historical Session', new_session_path %>
 
 <br>
