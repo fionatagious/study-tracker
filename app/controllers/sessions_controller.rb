@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     # solved error : param is missing or the value is empty: session
-    @session = Session.new(minutes: params[:duration])
+    @session = Session.new
+    # (minutes: params[:minutes])
     # (session_params)
-    # @session.duration = 10
   end
 
   def start
@@ -57,10 +57,10 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @session.update(session_params)
         format.html { redirect_to @session, notice: "Session was successfully updated." }
-        format.json { render :show, status: :ok, location: @session }
+        # format.json { render :show, status: :ok, location: @session }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
+        # format.json { render json: @session.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -71,7 +71,7 @@ class SessionsController < ApplicationController
     @session.destroy
     respond_to do |format|
       format.html { redirect_to sessions_url, notice: "Session was successfully destroyed." }
-      format.json { head :no_content }
+      # format.json { head :no_content }
     end
   end
 
@@ -83,10 +83,6 @@ class SessionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def session_params
-    params.require(:session).permit(:language, :project, :minutes, :buddies)
-  end
-
-  def duration
     params.require(:session).permit(:language, :project, :minutes, :buddies)
   end
 

@@ -25,13 +25,7 @@
 
   <div class="field">
     <%= form.label :minutes %>
-    <%#= form.text_field :minutes, :value => params[:duration].to_s %>
-    <% if params.key?(:minutes) %>
-      <p> <span><% params[:minutes].to_s %></span> minutes </p>
-    <% else %>
-      <p> <%= form.text_field %> </p>
-<!--      <p> <%#= form.text_field :minutes, :value => params[:minutes] %> </p>-->
-    <% end %>
+    <%= form.text_field :minutes, :value => params[:minutes].to_s %>
   </div>
 
   <div class="field">

@@ -11,7 +11,7 @@
     <% if params.key?(:stop) %>
       <p class="leading-relaxed"><span>Stop time is <%= params[:stop].to_time.to_formatted_s(:time)  %></span></p>
       <p class="leading-relaxed"><span>Session duration: <%= params[:minutes].to_s %></span> minutes </p>
-      <%= link_to 'Create a session with this duration', { action: "new" }, params: params[:minutes].to_s %>
+      <%= link_to 'Create a session with this duration', new_session_path(:minutes => params[:minutes]) %>
     <% end %>
   </td>
 
