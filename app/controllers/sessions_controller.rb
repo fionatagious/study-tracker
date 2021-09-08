@@ -55,6 +55,8 @@ class SessionsController < ApplicationController
 
   # PATCH/PUT /sessions/1 or /sessions/1.json
   def update
+    @session = Session.find(params[:id])
+
     respond_to do |format|
       if @session.update(session_params)
         format.html { redirect_to @session, notice: "Session was successfully updated." }
