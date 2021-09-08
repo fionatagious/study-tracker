@@ -35,6 +35,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1/edit
   def edit
+    @session = Session.find(params[:id])
   end
 
   # POST /sessions or /sessions.json

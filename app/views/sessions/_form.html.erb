@@ -11,8 +11,6 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :duration %>
-
   <div class="field">
     <%= form.label :language %>
     <%= form.text_field :language %>
@@ -25,7 +23,11 @@
 
   <div class="field">
     <%= form.label :minutes %>
-    <%= form.text_field :minutes, :value => params[:minutes].to_s %>
+    <% if params.has_key?(:minutes) %>
+      <%= form.text_field :minutes, :value => params[:minutes].to_s %>
+    <% else %>
+      <%= form.text_field :minutes %>
+    <% end %>
   </div>
 
   <div class="field">
