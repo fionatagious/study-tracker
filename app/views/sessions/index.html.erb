@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<div class="comic">
+  <img src="https://imgs.xkcd.com/comics/automation_2x.png">
+</div>
 
 <h1>Stopwatch</h1>
   <td>
@@ -39,7 +42,7 @@
 
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>
-        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
