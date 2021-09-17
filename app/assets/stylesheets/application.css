@@ -14,7 +14,30 @@
  *= require_self
  */
 
+
 img {
-    max-width: 25%;
-    max-height: 25%;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.button{
+    color: chartreuse;
+}
+
+body {
+    background-color: #f4f1de;
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    border: 1px solid hotpink;
+}
+
+.all {
+    width: 50%;
+}
+
+.top {
+    background-color: #81b29a;
 }

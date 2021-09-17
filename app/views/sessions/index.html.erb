@@ -1,53 +1,59 @@
-<p id="notice"><%= notice %></p>
-<div class="comic">
-  <img src="https://imgs.xkcd.com/comics/automation_2x.png">
-</div>
+<div class="all">
+  <div class="top">
+    <p id="notice"><%= notice %></p>
 
-<h1>Stopwatch</h1>
-  <td>
-    <%= button_to 'start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
-    <%= button_to 'stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
-    <% if params.key?(:start) %>
-      <p class="leading-relaxed"><span>Start time is <%= params[:start].to_time.to_formatted_s(:time) %></span></p>
-    <% end %>
+    <h1>Stopwatch</h1>
+      <td>
+        <%= button_to 'start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
+        <%= button_to 'stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
+        <% if params.key?(:start) %>
+          <p class="leading-relaxed"><span>Start time is <%= params[:start].to_time.to_formatted_s(:time) %></span></p>
+        <% end %>
 
-    <% if params.key?(:stop) %>
-      <p class="leading-relaxed"><span>Stop time is <%= params[:stop].to_time.to_formatted_s(:time)  %></span></p>
-      <p class="leading-relaxed"><span>Session duration: <%= params[:minutes].to_s %></span> minutes </p>
-      <%= link_to 'Create a session with this duration', new_session_path(:minutes => params[:minutes]) %>
-    <% end %>
-  </td>
+        <% if params.key?(:stop) %>
+          <p class="leading-relaxed"><span>Stop time is <%= params[:stop].to_time.to_formatted_s(:time)  %></span></p>
+          <p class="leading-relaxed"><span>Session duration: <%= params[:minutes].to_s %></span> minutes </p>
+          <%= link_to 'Create a session with this duration', new_session_path(:minutes => params[:minutes]) %>
+        <% end %>
+      </td>
+  </div>
 
-<h1>Sessions</h1>
+  <h1>Sessions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Language</th>
-      <th>Project</th>
-      <th>Minutes</th>
-      <th>Buddies</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sessions.each do |session| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= session.language %></td>
-        <td><%= session.project %></td>
-        <td><%= session.minutes %></td>
-        <td><%= session.buddies %></td>
-
-
-        <td><%= link_to 'Show', session %></td>
-        <td><%= link_to 'Edit', edit_session_path(session) %></td>
-        <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Language</th>
+        <th>Project</th>
+        <th>Minutes</th>
+        <th>Buddies</th>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    
+    <%= link_to 'Create a Historical Session', new_session_path, {:class => "button"} %>
 
-<%= link_to 'Create a Historical Session', new_session_path %>
+    <tbody>
+      <% @sessions.reverse_each do |session| %>
+        <tr>
+          <td><%= session.language %></td>
+          <td><%= session.project %></td>
+          <td><%= session.minutes %></td>
+          <td><%= session.buddies %></td>
 
-<br>
+
+          <td><%= link_to 'Show', session, class: "button" %></td>
+          <td><%= link_to 'Edit', edit_session_path(session), class: "button" %></td>
+          <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div class="comic">
+    <img src="https://imgs.xkcd.com/comics/automation_2x.png">
+  </div>
+
+</div>
