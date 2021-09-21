@@ -1,6 +1,5 @@
 # README
 
-study stopwatch & tracker ⏲️ 📔
+A study stopwatch & tracker ⏲️ 📔 to record past study sessions with friends, teammates, and mentors. 
 
-
-inspired by Tori & Ben
+⭐ Inspired by Tori & Ben
