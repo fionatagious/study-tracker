@@ -25,14 +25,18 @@ img {
 }
 
 body {
-    background-color: #f4f1de;
+    background-color: #3d405b;
     display: flex;
     justify-content: center;
 }
 
-* {
-    border: 1px solid hotpink;
+h1 {
+    color: #3d405b
 }
+
+/** {*/
+/*    border: 1px solid hotpink;*/
+/*}*/
 
 .all {
     width: 50%;
@@ -40,4 +44,13 @@ body {
 
 .top {
     background-color: #81b29a;
+    border-radius: 15px;
+    padding: 10px;
+    height: 150px;
+}
+
+.bottom {
+    background-color: #f4f1de;
+    border-radius: 15px;
+    padding: 10px;
 }

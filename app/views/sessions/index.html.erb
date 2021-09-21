@@ -2,10 +2,11 @@
   <div class="top">
     <p id="notice"><%= notice %></p>
 
-    <h1>Stopwatch</h1>
+    <h1 class="h1">Stopwatch</h1>
       <td>
-        <%= button_to 'start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
-        <%= button_to 'stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
+        <%= button_to 'Start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
+        <%= button_to 'Stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
+        <%= button_to 'Reset', {action: :index}  %>
         <% if params.key?(:start) %>
           <p class="leading-relaxed"><span>Start time is <%= params[:start].to_time.to_formatted_s(:time) %></span></p>
         <% end %>
@@ -18,42 +19,44 @@
       </td>
   </div>
 
-  <h1>Sessions</h1>
+  <div class="bottom">
+    <h1 class="h1">Sessions</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Language</th>
-        <th>Project</th>
-        <th>Minutes</th>
-        <th>Buddies</th>
-        <th colspan="4"></th>
-      </tr>
-    </thead>
-    
-    <%= link_to 'Create a Historical Session', new_session_path, {:class => "button"} %>
-
-    <tbody>
-      <% @sessions.reverse_each do |session| %>
+    <table>
+      <thead>
         <tr>
-          <td><%= session.language %></td>
-          <td><%= session.project %></td>
-          <td><%= session.minutes %></td>
-          <td><%= session.buddies %></td>
-
-
-          <td><%= link_to 'Show', session, class: "button" %></td>
-          <td><%= link_to 'Edit', edit_session_path(session), class: "button" %></td>
-          <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
+          <th>Language</th>
+          <th>Project</th>
+          <th>Minutes</th>
+          <th>Buddies</th>
+          <th colspan="4"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <%= link_to 'Create a Historical Session', new_session_path, {:class => "button"} %>
+
+      <tbody>
+        <% @sessions.reverse_each do |session| %>
+          <tr>
+            <td><%= session.language %></td>
+            <td><%= session.project %></td>
+            <td><%= session.minutes %></td>
+            <td><%= session.buddies %></td>
+
+
+            <td><%= link_to 'Show', session, class: "button" %></td>
+            <td><%= link_to 'Edit', edit_session_path(session), class: "button" %></td>
+            <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
   <br>
 
-  <div class="comic">
-    <img src="https://imgs.xkcd.com/comics/automation_2x.png">
-  </div>
+<!--  <div class="comic">-->
+<!--    <img src="https://imgs.xkcd.com/comics/automation_2x.png">-->
+<!--  </div>-->
 
 </div>
