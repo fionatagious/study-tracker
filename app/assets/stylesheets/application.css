@@ -14,8 +14,32 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 .all {
     width: 50%;
+}
+
+.paper {
+    width: 50%;
+    background: rgba(255,255,255,0.9);
+    height: 600px;
+    box-shadow: 0px 0px 5px 0px #888;
+}
+
+.paper::before {
+    content: '';
+    position: absolute;
+    left: 350px;
+    height: 600px;
+    width: 2px;
+    background: rgba(255,0,0,0.4);
+}
+
+.blue-lines {
+    margin-top: 60px;
+    background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
+    height: 500px;
 }
 
 /** {*/
@@ -38,15 +62,23 @@ body {
 }
 
 h1 {
-    color: #20312c
+    color: #20312c;
+    font-family: 'Caveat', cursive;
+    padding-left: 60px;
 }
 
 p {
-    color: #20312c
+    color: #20312c;
+}
+
+.new-sess-form {
+    color: #20312c;
+    font-family: 'Caveat', cursive;
+    padding-left: 60px;
 }
 
 tr {
-    color: #20312c
+    color: #20312c;
 }
 
 .top {

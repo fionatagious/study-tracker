@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="all">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Language:</strong>
-  <%= @session.language %>
-</p>
+  <p>
+    <strong>Language:</strong>
+    <%= @session.language %>
+  </p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @session.project %>
-</p>
+  <p>
+    <strong>Project:</strong>
+    <%= @session.project %>
+  </p>
 
-<p>
-  <strong>Minutes:</strong>
-  <%= @session.minutes %>
-</p>
+  <p>
+    <strong>Minutes:</strong>
+    <%= @session.minutes %>
+  </p>
 
-<p>
-  <strong>Study Buddies:</strong>
-  <%= @session.buddies %>
-</p>
+  <p>
+    <strong>Study Buddies:</strong>
+    <%= @session.buddies %>
+  </p>
 
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+  <%= link_to 'Edit', edit_session_path(@session) %> |
+  <%= link_to 'Back', sessions_path %>
+</div>
