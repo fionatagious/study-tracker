@@ -14,39 +14,45 @@
  *= require_self
  */
 
-
-img {
-    max-width: 50%;
-    max-height: 50%;
-}
-
-.button{
-    color: chartreuse;
-}
-
-body {
-    background-color: #3d405b;
-    display: flex;
-    justify-content: center;
-}
-
-h1 {
-    color: #3d405b
+.all {
+    width: 50%;
 }
 
 /** {*/
 /*    border: 1px solid hotpink;*/
 /*}*/
 
-.all {
-    width: 50%;
+/*img {*/
+/*    max-width: 50%;*/
+/*    max-height: 50%;*/
+/*}*/
+
+.button {
+    color: chartreuse;
+}
+
+body {
+    background-color: #e7dadc;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: #20312c
+}
+
+p {
+    color: #20312c
+}
+
+tr {
+    color: #20312c
 }
 
 .top {
-    background-color: #81b29a;
+    background-color: #b6cdc6;
     border-radius: 15px;
     padding: 10px;
-    height: 150px;
 }
 
 .bottom {
