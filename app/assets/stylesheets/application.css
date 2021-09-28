@@ -15,9 +15,18 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Josefin+Slab:ital,wght@1,700&family=Sansita+Swashed:wght@800&display=swap');
 
 .all {
     width: 50%;
+}
+
+.title {
+    font-family: 'Josefin Slab', serif;
+    font-size: large;
+    color: #a67780;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .paper {
