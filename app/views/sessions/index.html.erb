@@ -20,41 +20,42 @@
       </td>
   </div>
 
-  <div>
+  <div class="cover">
+    <div class="bottom">
+      <div class="brown-dots">
+        <h1 class="h1">Sessions</h1>
 
-  </div>
-  <div class="bottom">
-    <h1 class="h1">Sessions</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Project</th>
+              <th>Minutes</th>
+              <th>Buddies</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Language</th>
-          <th>Project</th>
-          <th>Minutes</th>
-          <th>Buddies</th>
-          <th colspan="4"></th>
-        </tr>
-      </thead>
+          <%= link_to 'Create a Historical Session', new_session_path, {:class => "button"} %>
 
-      <%= link_to 'Create a Historical Session', new_session_path, {:class => "button"} %>
-
-      <tbody>
-        <% @sessions.reverse_each do |session| %>
-          <tr>
-            <td><%= session.language %></td>
-            <td><%= session.project %></td>
-            <td><%= session.minutes %></td>
-            <td><%= session.buddies %></td>
+          <tbody>
+            <% @sessions.reverse_each do |session| %>
+              <tr>
+                <td><%= session.language %></td>
+                <td><%= session.project %></td>
+                <td><%= session.minutes %></td>
+                <td><%= session.buddies %></td>
 
 
-            <td><%= link_to 'Show', session, class: "button" %></td>
-            <td><%= link_to 'Edit', edit_session_path(session), class: "button" %></td>
-            <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+                <td><%= link_to 'Show', session, class: "button" %></td>
+                <td><%= link_to 'Edit', edit_session_path(session), class: "button" %></td>
+                <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
   <br>
 </div>

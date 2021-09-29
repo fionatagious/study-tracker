@@ -28,7 +28,8 @@
 
 .title {
     font-family: 'Josefin Slab', serif;
-    font-size: large;
+    font-size: x-large;
+    font-weight: 900;
     color: #a67780;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -58,8 +59,8 @@
 .holes {
     position: absolute;
     left: 310px;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     background: #e7dadc;
     box-shadow: 0px 0px 3px 0px #888;
@@ -116,10 +117,25 @@ tr {
     background-color: #b6cdc6;
     border-radius: 15px;
     padding: 10px;
+    margin-bottom: 20px;
+}
+
+.cover {
+    max-width: 800px;
+    max-height: 800px;
+    background: #a67780;
+    border-radius: 16px;
+    padding: 2px 4px 2.5px;
 }
 
 .bottom {
-    background-color: #f4f1de;
-    border-radius: 15px;
-    padding: 10px;
+    height: 100%;
+    position: relative;
+    background: #f4f1de;
+    border-radius: 16px;
+    padding: 30px 20px 25px;
+}
+
+.brown-dots {
+    margin-top: 30px;
 }
