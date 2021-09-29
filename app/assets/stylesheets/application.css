@@ -125,17 +125,29 @@ tr {
     max-height: 800px;
     background: #a67780;
     border-radius: 16px;
-    padding: 2px 4px 2.5px;
+    padding: 3px 3px 3px;
+    /*top left/right bottom*/
 }
 
-.bottom {
-    height: 100%;
-    position: relative;
-    background: #f4f1de;
+.bujo-dotgrid {
+    /*height: 100%;*/
     border-radius: 16px;
-    padding: 30px 20px 25px;
+    background: linear-gradient(90deg, #f4f1de 15px, transparent 1%) center,
+    linear-gradient(#f4f1de 15px, transparent 1%) center, #ccc;
+    background-size: 16px 16px;
+    /*display: grid;*/
 }
 
-.brown-dots {
-    margin-top: 30px;
+/*bujo binding and historical sessions*/
+.binding {
+    content: "";
+    background: linear-gradient(
+            to right,
+            transparent 10%,
+            rgba(153, 153, 153, 0.05) 50%,
+            rgba(153, 153, 153, 0.4) 51%,
+            rgba(153, 153, 153, 0.15) 51.5%,
+            transparent 90%
+    );
+    padding: 20px 20px 20px;
 }
