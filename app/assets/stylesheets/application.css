@@ -98,6 +98,11 @@ h1 {
     padding-left: 60px;
 }
 
+.button-align {
+    padding-left: 30px;
+
+}
+
 p {
     color: #20312c;
 }
@@ -116,7 +121,7 @@ tr {
 .top {
     background-color: #b6cdc6;
     border-radius: 15px;
-    padding: 10px;
+    padding: 30px 20px 30px;
     margin-bottom: 20px;
 }
 
@@ -150,4 +155,35 @@ tr {
             transparent 90%
     );
     padding: 20px 20px 20px;
+}
+
+.tabs {
+    position: absolute;
+    left: 800px;
+    height: 10px;
+    width: 16px;
+    /*box-shadow: 0px 10px 2px 10px #888;*/
+}
+
+.tab-top {
+    top: 50%;
+    background: #e9c46a;
+}
+
+.tab-middle {
+    top: 54%;
+    background: #e76f51;
+    left: 808px;
+    height: 10px;
+    width: 8px;
+
+}
+
+.tab-bottom {
+    top: 58%;
+    background: #118ab2;
+    left: 808px;
+    height: 10px;
+    width: 8px;
+
 }

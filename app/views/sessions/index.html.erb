@@ -5,9 +5,11 @@
 
     <h1 class="h1">Stopwatch</h1>
       <td>
-        <%= button_to 'Start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
-        <%= button_to 'Stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
-        <%= button_to 'Reset', {action: :index}  %>
+        <div class="button-align">
+          <%= button_to 'Start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
+          <%= button_to 'Stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
+          <%= button_to 'Reset', {action: :index}  %>
+        </div>
         <% if params.key?(:start) %>
           <p class="leading-relaxed"><span>Start time is <%= params[:start].to_time.to_formatted_s(:time) %></span></p>
         <% end %>
@@ -23,6 +25,9 @@
   <div class="cover">
     <div class="bujo-dotgrid">
       <div class="binding">
+        <div class="tabs tab-top"></div>
+        <div class="tabs tab-middle"></div>
+        <div class="tabs tab-bottom"></div>
         <h1 class="h1">Sessions</h1>
         <table>
           <thead>
