@@ -8,7 +8,7 @@
         <div class="button-align">
           <%= button_to 'Start', {action: :start}, method: :get, disabled: (params.key?(:start)) %>
           <%= button_to 'Stop', {action: :stop}, method: :get, params: { start: params[:start] }, disabled: !(params.key?(:start))  %>
-          <%= button_to 'Reset', {action: :index}  %>
+          <%= button_to 'Reset', {action: :index}, method: :get %>
         </div>
         <% if params.key?(:start) %>
           <p class="leading-relaxed"><span>Start time is <%= params[:start].to_time.to_formatted_s(:time) %></span></p>
