@@ -19,10 +19,10 @@
     width: 50%;
 }
 
-.table-align {
-    width: 100%
-    table-layout: fixed;
-}
+/*.table-align {*/
+/*    width: 100%*/
+/*    table-layout: fixed;*/
+/*}*/
 
 .title {
     font-family: 'Josefin Slab', serif;
