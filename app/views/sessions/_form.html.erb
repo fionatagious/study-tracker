@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :language %>
+    <%= form.label :language %><br/>
     <%= form.text_field :language %>
   </div>
 
   <div class="field">
-    <%= form.label :project %>
+    <%= form.label :project %><br/>
     <%= form.text_field :project %>
   </div>
 
   <div class="field">
-    <%= form.label :minutes %>
+    <%= form.label :minutes %><br/>
     <% if params.has_key?(:minutes) %>
       <%= form.text_field :minutes, :value => params[:minutes].to_s %>
     <% else %>
@@ -31,10 +31,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :buddies %>
+    <%= form.label :buddies %><br/>
     <%= form.text_field :buddies %>
   </div>
 
+  <br/>
   <div class="actions">
     <%= form.submit %>
   </div>
