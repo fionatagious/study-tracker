@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Gochi+Hand&display=swap');
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,15 +16,14 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Gochi+Hand&display=swap');
 .all {
     width: 50%;
 }
 
-/*.table-align {*/
-/*    width: 100%*/
-/*    table-layout: fixed;*/
-/*}*/
+.table-align {
+    width: 100%
+    table-layout: fixed;
+}
 
 .title {
     font-family: 'Josefin Slab', serif;
@@ -112,6 +113,7 @@ p {
 th {
     color: #20312c;
     font-family: 'Gochi Hand', cursive;
+    text-align: left;
 }
 
 td {
