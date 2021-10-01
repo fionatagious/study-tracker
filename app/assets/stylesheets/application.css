@@ -14,14 +14,7 @@
  *= require_self
  */
 
-/*selector {*/
-/*    property: value; */
-/*    rule: CSS-function(values);*/
-/*}*/
-
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Josefin+Slab:ital,wght@1,700&family=Sansita+Swashed:wght@800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Gochi+Hand&display=swap');
 .all {
     width: 50%;
 }
@@ -78,10 +71,6 @@
     bottom: 15%;
 }
 
-/** {*/
-/*    border: 1px solid hotpink;*/
-/*}*/
-
 .button {
     color: #20312c;
 }
@@ -100,11 +89,12 @@ h1 {
 
 .button-align {
     padding-left: 30px;
-
 }
 
 p {
     color: #20312c;
+    padding-left: 30px;
+    font-family: 'Gochi Hand', cursive;
 }
 
 .new-sess-form {
@@ -114,8 +104,14 @@ p {
     line-height: 18px;
 }
 
-tr {
+th {
     color: #20312c;
+    font-family: 'Gochi Hand', cursive;
+}
+
+td {
+    color: #20312c;
+    font-family: 'Gochi Hand', cursive;
 }
 
 .top {
@@ -156,6 +152,12 @@ tr {
     );
     padding: 20px 20px 20px;
 }
+
+/*.bujo-dotgrid::after {*/
+/*    max-width: 800px;*/
+/*    max-height: 800px;*/
+/*    background: hotpink;*/
+/*}*/
 
 .tabs {
     position: absolute;
