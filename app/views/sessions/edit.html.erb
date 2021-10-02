@@ -1,8 +1,14 @@
-<div class="all">
-  <h1>Edit Session</h1>
+<div class="all paper">
+  <div class="blue-lines">
+      <h1 class="h1">Edit Session</h1>
+      <div class="new-sess-form">
+        <%= render 'form', session: @session %>
 
-  <%= render 'form', session: @session %>
-
-  <%= link_to 'Show', @session %> |
-  <%= link_to 'Back', sessions_path %>
+        <%= link_to 'Show', @session %> |
+        <%= link_to 'Back', sessions_path %>
+      </div>
+  </div>
+  <div class="holes hole-top"></div>
+  <div class="holes hole-middle"></div>
+  <div class="holes hole-bottom"></div>
 </div>

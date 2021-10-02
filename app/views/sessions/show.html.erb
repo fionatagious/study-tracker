@@ -1,26 +1,34 @@
-<div class="all">
-  <p id="notice"><%= notice %></p>
+<div class="all paper">
+  <div class="blue-lines">
+    <h1 class="h1">Session Info</h1>
+    <div class="new-sess-form">
+      <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Language:</strong>
-    <%= @session.language %>
-  </p>
+        <p>
+          <strong>Language:</strong>
+          <%= @session.language %>
+        </p>
 
-  <p>
-    <strong>Project:</strong>
-    <%= @session.project %>
-  </p>
+        <p>
+          <strong>Project:</strong>
+          <%= @session.project %>
+        </p>
 
-  <p>
-    <strong>Minutes:</strong>
-    <%= @session.minutes %>
-  </p>
+        <p>
+          <strong>Minutes:</strong>
+          <%= @session.minutes %>
+        </p>
 
-  <p>
-    <strong>Study Buddies:</strong>
-    <%= @session.buddies %>
-  </p>
+        <p>
+          <strong>Study Buddies:</strong>
+          <%= @session.buddies %>
+        </p>
 
-  <%= link_to 'Edit', edit_session_path(@session) %> |
-  <%= link_to 'Back', sessions_path %>
+        <%= link_to 'Edit', edit_session_path(@session) %> |
+        <%= link_to 'Back', sessions_path %>
+    </div>
+  </div>
+  <div class="holes hole-top"></div>
+  <div class="holes hole-middle"></div>
+  <div class="holes hole-bottom"></div>
 </div>
