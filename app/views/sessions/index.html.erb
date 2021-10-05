@@ -31,7 +31,12 @@
         <div class="tabs tab-top"></div>
         <div class="tabs tab-middle"></div>
         <div class="tabs tab-bottom"></div>
-        <h1 class="h1">Sessions</h1>
+        <div class="grid">
+          <h1 class="h1">Sessions</h1>
+          <div id="btn-historical">
+            <%= link_to 'Log a Past Session', new_session_path %>
+          </div>
+        </div>
         <table class="table-align">
           <colgroup>
             <col style="width:20%;">
@@ -52,7 +57,7 @@
             </tr>
           </thead>
 
-          <%= link_to 'Create a Historical Session', new_session_path, {:class => "button"} %>
+
 
           <tbody>
             <% @sessions.reverse_each do |session| %>
@@ -63,9 +68,9 @@
                 <td><%= session.buddies %></td>
 
 
-                <td><%= link_to 'Show', session, class: "button" %></td>
-                <td><%= link_to 'Edit', edit_session_path(session), class: "button" %></td>
-                <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></td>
+                <td><%= link_to 'Show', session, class: "btn-link" %></td>
+                <td><%= link_to 'Edit', edit_session_path(session), class: "btn-link" %></td>
+                <td><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-link" %></td>
               </tr>
             <% end %>
           </tbody>

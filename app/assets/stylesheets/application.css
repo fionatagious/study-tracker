@@ -17,7 +17,7 @@
  */
 
 .all {
-    width: 50%;
+    width: 55%;
 }
 
 /*.table-align {*/
@@ -27,7 +27,8 @@
 
 .title {
     font-family: 'Caveat', cursive;
-    font-size: xx-large;
+    line-height: 100%;
+    font-size: xxx-large;
     font-weight: 900;
     color: #a67780;
     padding-top: 30px;
@@ -77,8 +78,45 @@
     top: 70%;
 }
 
-.button {
-    color: #20312c;
+.btn-link {
+    color: #a67780;
+    text-decoration: none;
+}
+
+/*.btn-rectangle {*/
+/*    display: inline-block;*/
+/*    padding: 8px 10px;*/
+/*    height: fit-content;*/
+/*    width: fit-content;*/
+/*    position: relative;*/
+/*    transition: 0.2s ease-in-out;*/
+/*    background: #a67780;*/
+/*    @include border(1.5px);*/
+/*    border-radius: 0 0 125px 3px/3px 85px 5px 55px;*/
+/*    box-shadow: 3px 3px 0 0 black;*/
+/*}*/
+
+#btn-historical a:link, #btn-historical a:visited {
+    background: #a67780;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 10px;
+    height: 20px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Caveat', cursive;
+}
+
+/*#btn-historical:hover {*/
+/*    border: #a67780;*/
+/*}*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 250px;
 }
 
 body {
@@ -90,11 +128,7 @@ body {
 h1 {
     color: #20312c;
     font-family: 'Caveat', cursive;
-    padding-left: 60px;
-}
-
-.button-align {
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
 p {
@@ -113,11 +147,14 @@ th {
     color: #20312c;
     font-family: 'Caveat', cursive;
     text-align: left;
+    padding-left: 3px;
 }
 
 td {
     color: #20312c;
     font-family: 'Caveat', cursive;
+    padding-left: 3px;
+    text-align: left;
 }
 
 .top {
