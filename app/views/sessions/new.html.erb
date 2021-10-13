@@ -1,12 +1,17 @@
-<div class="paper">
-  <div class="blue-lines">
-    <h1 class="h1">New Session</h1>
-    <div class="new-sess-form">
-      <%= render 'form', session: @session %>
-      <%= link_to 'Back to Stopwatch', sessions_path, class: "btn-link" %>
+<div class="paper-paper">
+  <header class="paper-header"></header>
+  <div class="paper-blue-lines">
+    <div class="paper-margin">
+      <span class="paper-holes paper-hole-top"></span>
+      <span class="paper-holes paper-hole-middle"></span>
+      <span class="paper-holes paper-hole-bottom"></span>
+    </div>
+    <div class="paper-main">
+      <h1 class="">New Session</h1>
+      <div class="">
+        <%= render 'form', session: @session %>
+        <%= link_to 'Back to Stopwatch', sessions_path, class: "paper-back-link" %>
+      </div>
     </div>
   </div>
-  <div class="holes hole-top"></div>
-  <div class="holes hole-middle"></div>
-  <div class="holes hole-bottom"></div>
 </div>
