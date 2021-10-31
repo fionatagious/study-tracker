@@ -283,6 +283,12 @@ td {
     font-family: 'Caveat', cursive;
 }
 
+.create-session-link {
+    margin-top: 10px;
+    display: inline-block;
+    font-family: 'Caveat', cursive;
+    padding-left: 33px;
+}
 
 /*.bujo-dotgrid::after {*/
 /*    max-width: 800px;*/
